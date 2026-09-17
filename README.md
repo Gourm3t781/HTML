@@ -12,20 +12,22 @@
 
 ### 🚀 Быстрый переход
 
-🔗 **[Посмотреть опубликованную Лабораторную работу №1](https://nik5789.github.io/web-development-labs/Lab1/)**
+🔗 **[Посмотреть опубликованную Лабораторную работу №1](https://nik5789.github.io/web-development-labs/Lab1/level1/level2/)**
 
 ---
 
 ### 📂 Структура проекта
 
 ```text
-web-development-labs/
+.
 ├── Lab1/
-│   ├── about/
-│   │   └── page.html       # Страница в подкаталоге about
-│   ├── index.html          # Главная страница (Задания 1 и 2)
-│   ├── style.css           # Внешняя таблица стилей CSS
-│   ├── image.jpg           # Изображение и карта областей (map)
-│   ├── demo.html           # Демонстрационный файл
-│   └── page.html           # Дополнительная страница
-└── README.md                   # Документация репозитория
+│   └── level1/
+│       ├── page.html
+│       └── level2/
+│           ├── about/
+│           │   └── page.html
+│           ├── demo.html
+│           ├── image.jpg
+│           ├── index.html
+│           └── page.html
+└── README.md
