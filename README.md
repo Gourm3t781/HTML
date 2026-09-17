@@ -12,7 +12,7 @@
 
 ### 🚀 Быстрый переход
 
-🔗 **[Посмотреть опубликованную Лабораторную работу №1](https://nik5789.github.io/web-development-labs/Lab1/level1/level2/)**
+🔗 **[Посмотреть опубликованную Лабораторную работу №1](https://nik5789.github.io/web-development-labs/Lab1/level1/level2/index.html)**
 
 ---
 
