@@ -31,9 +31,9 @@
 │           ├── index.html
 │           └── page.html
 ├── Lab2/
-│   └── уровень 1/
+│   └── level1/
 │       ├── page.html
-│       └── уровень 2/
+│       └── level2/
 │           ├── about/
 │           │   └── page.html
 │           ├── demo.html
