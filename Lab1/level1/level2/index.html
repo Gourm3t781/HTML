@@ -189,7 +189,10 @@
         ФИО:<br />
         <input name="field-fio"
           type="text"
-          placeholder="Введите ФИО" />
+          placeholder="Введите ФИО" 
+          pattern="[A-Za-zA-Яа-яЁё\s\-]+"
+          title="ФИО должно содержать только буквы и пробелы(без цифр)"
+          required />
       </label><br />
 
       <label>
