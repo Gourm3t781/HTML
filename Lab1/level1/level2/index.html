@@ -199,8 +199,11 @@
         Телефон:<br />
         <input name="field-tel"
           type="tel"
-          placeholder="+7 (999) 000-00-00" />
-      </label><br />
+          placeholder="+7 (999) 000-00-00" 
+          pattern="[\+0-9\s\-\(\)]+"
+          title="Номер телефона должен содержать только цифры и символы +,-"
+          required />
+      </label><br /><br />
 
       <label>
         e-mail:<br />
