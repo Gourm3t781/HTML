@@ -198,20 +198,26 @@
 
       <form action="https://httpbin.org/post"
         method="POST">
+        
+      <label>
+        ФИО:<br />
+        <input name="field-fio"
+          type="text"
+          placeholder="Введите ФИО" 
+          pattern="[A-Za-zA-Яа-яЁё\s\-]+"
+          title="ФИО должно содержать только буквы и пробелы(без цифр)"
+          required />
+      </label><br /><br />
 
-        <label>
-          ФИО:<br />
-          <input name="field-fio"
-            type="text"
-            placeholder="Введите ФИО" />
-        </label><br /><br />
-
-        <label>
-          Телефон:<br />
-          <input name="field-tel"
-            type="tel"
-            placeholder="+7 (999) 000-00-00" />
-        </label><br /><br />
+      <label>
+        Телефон:<br />
+        <input name="field-tel"
+          type="tel"
+          placeholder="+7 (999) 000-00-00" 
+          pattern="[\+0-9\s\-\(\)]+"
+          title="Номер телефона должен содержать только цифры и символы +,-"
+          required />
+      </label><br /><br />
 
         <label>
           e-mail:<br />
