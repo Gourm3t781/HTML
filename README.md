@@ -25,8 +25,8 @@
 │       ├── page.html
 │       └── level2/
 │           ├── about/
-│           │    ├── about.html
-|           |    └── page.html
+│           │   ├── about.html
+|           |   └── page.html
 │           ├── demo.html
 │           ├── image.jpg
 │           ├── index.html
@@ -36,8 +36,8 @@
 │       ├── page.html
 │       └── level2/
 │           ├── about/
-│           │    ├── about.html
-|           |    └── page.html
+│           │   ├── about.html
+|           |   └── page.html
 │           ├── demo.html
 │           ├── image.jpg
 │           ├── image.png
