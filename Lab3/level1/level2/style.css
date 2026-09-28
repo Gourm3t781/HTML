@@ -1,0 +1,204 @@
+/* 1. ДЛЯ СМАРТФОНОВ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFFBEB;
+  color: #78350F;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Заголовки */
+h1, h2 {
+  color: #78350F;
+}
+
+/* Ссылки */
+a {
+  color: #0055bb;
+}
+
+a:hover {
+  color: #d97706;
+}
+
+/* Шапка сайта (Header) — 100% ширины */
+.header {
+  width: 100%;
+  background-color: #FEF3C7;
+  padding: 15px 0;
+  border-bottom: 1px solid #FCD34D;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 15px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.site-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #78350F;
+  text-align: center;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.nav-menu a {
+  margin-left: 0;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+/* Основной контейнер контента — Flexbox */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 15px;
+}
+
+
+.table-block {
+  order: 1;
+}
+
+.links-block {
+  order: 2; 
+}
+
+.form-block {
+  order: 3;
+}
+
+/* Таблица */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+  background-color: #FFFBEB;
+}
+
+.data-table th, 
+.data-table td {
+  border: 1px solid #D97706;
+  padding: 10px;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: #FEF3C7;
+}
+
+.data-table td.merged {
+  text-align: center;
+}
+
+/* Форма */
+form {
+  background-color: #FFFBEB;
+  border: 1px solid #cccccc;
+  padding: 20px;
+  width: 100%;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+/* Изображения: ограниченный размер как в лаб 1/2, но с адаптивностью */
+.responsive-img {
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  margin: 10px 0;
+}
+
+/* Подвал сайта*/
+.footer {
+  width: 100%;
+  background-color: #FEF3C7;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 30px;
+  border-top: 1px solid #FCD34D;
+  color: #78350F;
+}
+
+
+/*2. Традиционный вид с максимальной шириной 800px  */
+@media screen and (min-width: 800px) {
+
+  .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
+  .logo {
+    margin-bottom: 0;
+  }
+
+  .site-title {
+    line-height: 60px;
+  }
+
+  .nav-menu {
+    flex-direction: row;
+    width: auto;
+    margin-top: 0;
+    gap: 15px;
+  }
+
+  .nav-menu a {
+    margin-left: 0;
+  }
+
+  .main-content {
+    max-width: 800px;
+    margin: 20px auto 0 auto;
+    padding: 10px;
+  }
+
+  .links-block {
+    order: 1;
+  }
+
+  .table-block {
+    order: 2;
+  }
+
+  .form-block {
+    order: 3;
+  }
+}
