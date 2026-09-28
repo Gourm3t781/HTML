@@ -13,6 +13,7 @@
 
 🔗 **[Посмотреть опубликованную Лабораторную работу №1](https://Gourm3t781.github.io/HTML/Lab1/level1/level2/index.html)**  
 🔗 **[Посмотреть опубликованную Лабораторную работу №2](https://Gourm3t781.github.io/HTML/Lab2/level1/level2/index.html)**
+🔗 **[Посмотреть опубликованную Лабораторную работу №3](https://Gourm3t781.github.io/HTML/Lab3/level1/level2/index.html)**
 
 ---
 
@@ -38,6 +39,19 @@
 │           ├── about/
 │           │   ├── about.html
 |           |   └── page.html
+│           ├── demo.html
+│           ├── image.jpg
+│           ├── image.png
+│           ├── index.html
+│           ├── style.css
+│           └── page.html
+├── Lab3/
+│   └── level1/
+│       ├── page.html
+│       └── level2/
+│           ├── about/
+│           │   ├── about.html
+│           │   └── page.html
 │           ├── demo.html
 │           ├── image.jpg
 │           ├── image.png
