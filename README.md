@@ -9,7 +9,7 @@
 
 ---
 
-### 🚀 Быстрый переход
+### Ссылки на сайты
 
 🔗 **[Посмотреть опубликованную Лабораторную работу №1](https://Gourm3t781.github.io/HTML/Lab1/level1/level2/index.html)**  
 🔗 **[Посмотреть опубликованную Лабораторную работу №2](https://Gourm3t781.github.io/HTML/Lab2/level1/level2/index.html)**  
