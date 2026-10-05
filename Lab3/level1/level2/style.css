@@ -124,9 +124,6 @@ a:hover {
   text-align: left;
 }
 
-.data-table th {
-  background-color: #FDE68A;
-}
 
 .data-table tr:nth-child(odd) {
   background-color: #FFFBEB;
