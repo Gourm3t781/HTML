@@ -1,0 +1,142 @@
+/* Кастомная стилизация поверх Bootstrap 5 */
+
+body {
+  background-color: #FFFBEB;
+  color: #78350F;
+  font-family: sans-serif;
+}
+
+/* Заголовки */
+h1, h2, .h2, .h4 {
+  color: #78350F;
+}
+
+/* Ссылки */
+a {
+  color: #0055bb;
+}
+
+a:hover {
+  color: #d97706;
+}
+
+/* Шапка сайта */
+.header {
+  background-color: #FEF3C7;
+  border-color: #FCD34D !important;
+}
+
+.site-title {
+  color: #78350F;
+}
+
+/* Кнопки навигации */
+.custom-nav-btn {
+  font-size: 15px;
+  font-weight: 600;
+  color: #78350F;
+  background-color: #FDE68A;
+  border: 1px solid #FCD34D;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+.custom-nav-btn:hover {
+  background-color: #D97706;
+  color: #FFFFFF;
+  border-color: #B45309;
+  box-shadow: 0 4px 10px rgba(217, 119, 6, 0.25);
+  transform: translateY(-2px);
+}
+
+.custom-nav-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Карточки блоков */
+.custom-card {
+  background-color: #FFFBEB;
+  border: 1px solid #FCD34D;
+  border-radius: 10px;
+}
+
+/* Таблица */
+.custom-table {
+  border-color: #D97706;
+}
+
+.custom-table th,
+.custom-table td {
+  border-color: #D97706;
+  padding: 10px;
+}
+
+.custom-table th {
+  background-color: #FDE68A;
+  color: #78350F;
+}
+
+/* Чередование цветов строк таблицы */
+.custom-table tbody tr:nth-child(odd) {
+  background-color: #FEF3C7;
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background-color: #FFFBEB;
+}
+
+.custom-table td.merged {
+  background-color: #FDE68A;
+}
+
+/* Форма и инпуты */
+.form-control,
+.form-select {
+  border-color: #D97706;
+  background-color: #FFFFFF;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #B45309;
+  box-shadow: 0 0 0 0.25rem rgba(217, 119, 6, 0.25);
+}
+
+.form-check-input:checked {
+  background-color: #D97706;
+  border-color: #B45309;
+}
+
+.form-check-input:focus {
+  border-color: #B45309;
+  box-shadow: 0 0 0 0.25rem rgba(217, 119, 6, 0.25);
+}
+
+/* Кнопка отправки формы */
+.custom-submit-btn {
+  background-color: #FDE68A;
+  color: #78350F;
+  border: 1px solid #D97706;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+.custom-submit-btn:hover {
+  background-color: #D97706;
+  color: #FFFFFF;
+  border-color: #B45309;
+}
+
+/* Изображения */
+.responsive-img {
+  max-width: 300px;
+  height: auto;
+}
+
+/* Подвал */
+.footer {
+  background-color: #FEF3C7;
+  border-color: #FCD34D !important;
+  color: #78350F;
+}
