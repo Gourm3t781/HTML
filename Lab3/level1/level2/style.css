@@ -126,11 +126,11 @@ a:hover {
 
 
 .data-table tr:nth-child(odd) {
-  background-color: #FFFBEB;
+  background-color: #FEF3C7;
 }
 
 .data-table tr:nth-child(even) {
-  background-color: #FEF3C7;
+  background-color: #FFFBEB;
 }
 
 .data-table td.merged {
