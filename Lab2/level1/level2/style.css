@@ -70,7 +70,6 @@ a:hover {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 25px;
-  background-color: #FFFBEB;
 }
 
 .data-table th, 
@@ -80,8 +79,13 @@ a:hover {
   text-align: left;
 }
 
-.data-table th {
+
+.data-table tr:nth-child(odd) {
   background-color: #FEF3C7;
+}
+
+.data-table tr:nth-child(even) {
+  background-color: #FFFBEB;
 }
 
 .data-table td.merged {
