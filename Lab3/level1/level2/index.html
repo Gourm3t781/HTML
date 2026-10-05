@@ -189,14 +189,14 @@
           </tr>
           <tr>
             <td>Технологии</td>
-            <td>HTML5, CSS3</td>
+            <td>HTML5, CSS3 (Flexbox, Media Queries)</td>
           </tr>
           <tr>
             <td>Тип макета</td>
             <td>Адаптивный (Mobile-First)</td>
           </tr>
           <tr>
-            <td>Хостинг</td>
+            <td>Хостинг и деплой</td>
             <td>GitHub Pages</td>
           </tr>
         </table>
@@ -237,9 +237,11 @@
 
           <label>
             Дата рождения:<br />
-            <input name="field-date"
+            <input id="field-date"
+              name="field-date"
               value="2005-01-01"
-              type="date" />
+              type="date"
+              required />
           </label><br /><br />
 
           Пол:<br />
@@ -277,8 +279,8 @@
           </label><br /><br />
 
           <label><input type="checkbox"
-            checked="checked"
-            name="check-contract" />
+            name="check-contract"
+            required />
             С контрактом ознакомлен(а)</label><br /><br />
 
           <input type="submit"
@@ -293,6 +295,15 @@
     <footer class="footer">
       (c) Бычков Никита 2026
     </footer>
+
+    <!-- Скрипт для ограничения даты рождения сегодняшним днем -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dateInput = document.getElementById("field-date");
+        const today = new Date().toISOString().split("T")[0];
+        dateInput.setAttribute("max", today);
+      });
+    </script>
 
   </body>
 
