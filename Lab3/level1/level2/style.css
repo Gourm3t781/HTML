@@ -115,7 +115,6 @@ a:hover {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 25px;
-  background-color: #FFFBEB;
 }
 
 .data-table th, 
@@ -126,7 +125,16 @@ a:hover {
 }
 
 .data-table th {
+  background-color: #FDE68A;
+}
+
+/* Чередование фона четных и нечетных строк таблицы */
+.data-table tr:nth-child(even) {
   background-color: #FEF3C7;
+}
+
+.data-table tr:nth-child(odd) {
+  background-color: #FFFBEB;
 }
 
 .data-table td.merged {
@@ -173,7 +181,7 @@ textarea {
   color: #78350F;
 }
 
-/*2. Традиционный вид с максимальной шириной 800px  */
+/* 2. Традиционный вид с максимальной шириной 800px */
 @media screen and (min-width: 800px) {
 
   .header-container {
