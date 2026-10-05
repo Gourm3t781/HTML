@@ -128,6 +128,18 @@ a:hover {
   background-color: #FDE68A;
 }
 
+.data-table tr:nth-child(odd) {
+  background-color: #FFFBEB;
+}
+
+.data-table tr:nth-child(even) {
+  background-color: #FEF3C7;
+}
+
+.data-table td.merged {
+  text-align: center;
+}
+
 /* Чередование фона четных и нечетных строк таблицы */
 .data-table tr:nth-child(even) {
   background-color: #FEF3C7;
