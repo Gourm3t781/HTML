@@ -78,16 +78,16 @@ a:hover {
 }
 
 /* Чередование цветов строк таблицы */
-.custom-table tbody tr:nth-child(odd) {
+.custom-table tbody tr:nth-child(even) {
   background-color: #FEF3C7;
 }
 
-.custom-table tbody tr:nth-child(even) {
+.custom-table tbody tr:nth-child(odd) {
   background-color: #FFFBEB;
 }
 
 .custom-table td.merged {
-  background-color: #FDE68A;
+  text-align: center;
 }
 
 /* Форма и инпуты */
