@@ -1,110 +1,453 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Лабораторная работа №6 — Калькулятор сборки ПК</title>
-  
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  
-  <!-- Кастомные стили -->
-  <link rel="stylesheet" href="style.css" />
-  
-  <!-- Подключение внешнего JS файла с defer -->
-  <script src="script.js" defer></script>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Разработка пользовательского Web-интерфейса</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-<body class="bg-light">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
 
-  <header class="header py-3 mb-4 border-bottom shadow-sm">
-    <div class="container d-flex align-items-center justify-content-between">
-      <span class="site-title h4 mb-0 fw-bold">Web-интерфейс</span>
-      <nav class="nav-menu">
-        <a href="../index.html" class="btn btn-outline-secondary btn-sm">На главную</a>
-      </nav>
-    </div>
-  </header>
+    <!-- Внешний скрипт с defer -->
+    <script src="script.js" defer></script>
+  </head>
 
-  <main class="container my-4">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-8 col-lg-6">
-        <div class="card shadow-sm p-4 custom-card">
-          <h1 class="h3 mb-4 text-center">Калькулятор сборки ПК</h1>
+  <body>
 
-          <form id="calc-form">
-            
-            <!-- 1. Количество -->
-            <div class="mb-3">
-              <label for="quantity" class="form-label fw-medium">Количество сборщиков / комплектов:</label>
-              <input type="text" id="quantity" name="quantity" class="form-control" value="1" required />
-              <div id="error-output" class="text-danger small mt-1"></div>
-            </div>
+    <!-- Шапка сайта (Header) -->
+    <header class="header py-3 mb-4 border-bottom">
+      <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
 
-            <!-- 2. Выбор типа сборки (Радиокнопки, 3 варианта) -->
-            <div class="mb-3">
-              <label class="form-label fw-medium d-block">Конфигурация сборки ПК:</label>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="serviceType" id="type1" value="35000" checked />
-                <label class="form-check-label" for="type1">
-                  1. Офисный ПК (35 000 руб.) — без доп. опций
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="serviceType" id="type2" value="75000" />
-                <label class="form-check-label" for="type2">
-                  2. Игровой ПК (75 000 руб.) — с выбором видеокарты
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="serviceType" id="type3" value="120000" />
-                <label class="form-check-label" for="type3">
-                  3. Кастомная станция (120 000 руб.) — с доп. опцией кабель-менеджмента
-                </label>
-              </div>
-            </div>
-
-            <!-- 3. Опция товара (Селект) — отображается ТОЛЬКО для 2-го типа -->
-            <div class="mb-3" id="select-container" style="display: none;">
-              <label for="service-select" class="form-label fw-medium">Выберите видеокарту:</label>
-              <select id="service-select" name="serviceSelect" class="form-select">
-                <option value="32000">NVIDIA GeForce RTX 4060 8GB (+32 000 руб.)</option>
-                <option value="65000">NVIDIA GeForce RTX 4070 SUPER (+65 000 руб.)</option>
-                <option value="115000">NVIDIA GeForce RTX 4080 SUPER (+115 000 руб.)</option>
-              </select>
-            </div>
-
-            <!-- 4. Свойство товара (Чекбокс) — отображается ТОЛЬКО для 3-го типа -->
-            <div class="mb-3" id="checkbox-container" style="display: none;">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="service-checkbox" name="serviceCheckbox" value="15000" />
-                <label class="form-check-label fw-medium" for="service-checkbox">
-                  Премиум жидкостное охлаждение и кастомный кабель-менеджмент (+15 000 руб.)
-                </label>
-              </div>
-            </div>
-
-          </form>
-
-          <!-- Вывод итоговой стоимости -->
-          <div id="result-output" class="alert alert-success mt-3 fs-5 fw-bold text-center" role="status">
-            Стоимость сборки: 35 000 руб.
-          </div>
-
+        <!-- Логотип и название -->
+        <div class="brand d-flex align-items-center gap-2">
+          <img class="logo" src="image.png" alt="Web-интерфейс" />
+          <span class="site-title h4 mb-0 fw-bold">Web-интерфейс</span>
         </div>
+
+        <!-- Меню со ссылками -->
+        <nav class="nav-menu d-flex flex-column flex-md-row gap-2 gap-md-3 w-100 w-md-auto text-center">
+          <a href="#links" class="btn custom-nav-btn">Ссылки</a>
+          <a href="#table-section" class="btn custom-nav-btn">Таблица ПК</a>
+          <a href="#calc-l5-section" class="btn custom-nav-btn">Калькулятор цен</a>
+          <a href="#calc-l6-section" class="btn custom-nav-btn">Динамический калькулятор (Лаб 6)</a>
+          <a href="#form-section" class="btn custom-nav-btn">Форма</a>
+        </nav>
+
       </div>
-    </div>
-  </main>
+    </header>
 
-  <footer class="footer py-3 text-center border-top mt-5 bg-white">
-    <div class="container">
-      <span>(c) Бычков Никита 2026</span>
-    </div>
-  </footer>
+    <!-- Основной контейнер -->
+    <main class="container my-4">
 
-  <!-- Bootstrap 5 JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+      <div class="row g-4">
+
+        <!-- 1. Список гиперссылок -->
+        <section class="links-block col-12 order-1" id="links">
+          <div class="card p-3 p-md-4 shadow-sm custom-card">
+            <h2 class="h4 mb-3">Маркированный список гиперссылок</h2>
+            <ul class="mb-0">
+              <li class="mb-2">
+                Абсолютная гиперссылка на главную страницу сайта kubsu.ru (HTTP):
+                <a href="http://kubsu.ru/">http://kubsu.ru/</a>
+              </li>
+              <li class="mb-2">
+                Абсолютная гиперссылка на главную страницу сайта kubsu.ru в протоколе HTTPS:
+                <a href="https://kubsu.ru/">https://kubsu.ru/</a>
+              </li>
+              <li class="mb-2">
+                Ссылка-изображение (кликабельная картинка):
+                <br />
+                <a href="image.jpg">
+                  <img src="image.jpg" alt="Кликабельное изображение" class="img-fluid responsive-img rounded my-2" />
+                </a>
+              </li>
+              <li class="mb-2">
+                Сокращенная ссылка на внутреннюю страницу:
+                <a href="about/page.html">Перейти на внутреннюю страницу</a>
+              </li>
+              <li class="mb-2">
+                Сокращенная ссылка на главную страницу сайта:
+                <a href="index.html">На главную</a>
+              </li>
+              <li class="mb-2">
+                Ссылка на фрагмент текущей страницы (якорь):
+                <a href="#form-section">Перейти к блоку с формой</a>
+              </li>
+              <li class="mb-2">
+                Ссылка с тремя параметрами в URL:
+                <a href="https://example.com/search?param1=1&amp;param2=2&amp;param3=3">Поиск с тремя параметрами</a>
+              </li>
+              <li class="mb-2">
+                Ссылка с параметром id в URL:
+                <a href="https://example.com/user?id=100">Профиль пользователя #100</a>
+              </li>
+              <li class="mb-2">
+                Относительная ссылка на страницу в текущем каталоге:
+                <a href="demo.html">Документ demo.html</a>
+              </li>
+              <li class="mb-2">
+                Относительная ссылка на страницу в каталоге about:
+                <a href="about/about.html">Страница в папке about</a>
+              </li>
+              <li class="mb-2">
+                Относительная ссылка на страницу в каталоге уровнем выше текущего:
+                <a href="../page.html">Файл уровнем выше</a>
+              </li>
+              <li class="mb-2">
+                Относительная ссылка на страницу в каталоге двумя уровнями выше:
+                <a href="../../page.html">Файл двумя уровнями выше</a>
+              </li>
+              <li class="mb-2">
+                Контекстная ссылка в тексте абзаца:
+                <p class="mb-0">В данном предложении размещена <a href="https://kubsu.ru/">контекстная гиперссылка</a>, ведущая на официальный портал.</p>
+              </li>
+              <li class="mb-2">
+                Ссылка на фрагмент страницы стороннего сайта:
+                <a href="https://ru.wikipedia.org/wiki/HTML#История">Википедия: Раздел «История»</a>
+              </li>
+              <li class="mb-2">
+                Ссылки из прямоугольных и круглых областей картинки (HTML-тег map):
+                <br />
+                <img src="image.jpg"
+                  alt="Интерактивная карта изображения"
+                  usemap="#navigation-map"
+                  class="img-fluid responsive-img rounded my-2" />
+                <map name="navigation-map">
+                  <area shape="rect" coords="0,0,100,100" href="https://kubsu.ru/" alt="Прямоугольная область" />
+                  <area shape="circle" coords="200,100,40" href="https://example.com/" alt="Круглая область" />
+                </map>
+              </li>
+              <li class="mb-2">
+                Ссылка с пустым значением атрибута href:
+                <a href="">Ссылка с пустым href</a>
+              </li>
+              <li class="mb-2">
+                Ссылка без атрибута href:
+                <a>Несодержащая href ссылка</a>
+              </li>
+              <li class="mb-2">
+                Ссылка, по которой запрещен переход поисковым системам:
+                <a href="https://example.com/private" rel="nofollow">Закрытая ссылка (rel="nofollow")</a>
+              </li>
+              <li class="mb-2">
+                Ссылка, запрещенная для индексации поисковиками:
+                <a href="https://example.com/hidden" rel="noindex">Запрещенная для индексации ссылка (rel="noindex")</a>
+              </li>
+              <li class="mb-2">
+                Нумерованный список ссылок с подсказками (атрибут title):
+                <ol class="mt-1 mb-0">
+                  <li class="mb-1">
+                    <a href="https://kubsu.ru/" title="Официальный сайт Кубанского государственного университета">Сайт КубГУ</a>
+                  </li>
+                  <li>
+                    <a href="https://validator.w3.org/" title="Онлайн-сервис проверки валидности HTML-кода от W3C">Валидатор W3C</a>
+                  </li>
+                </ol>
+              </li>
+              <li class="mb-0">
+                Ссылка на файл на сервере FTP с указанием авторизационных данных:
+                <a href="ftp://user:password@ftp.example.com/file.txt">Скачать файл с FTP-сервера</a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 2. Таблица (Тематика ПК) -->
+        <section class="table-block col-12 order-2" id="table-section">
+          <div class="card p-3 p-md-4 shadow-sm custom-card">
+            <h2 class="h4 mb-3">Спецификация игровой сборки ПК</h2>
+
+            <div class="table-responsive">
+              <table class="table table-bordered custom-table mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">Компонент</th>
+                    <th scope="col">Выбранная модель / Характеристика</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="2" class="merged text-center fw-semibold">Базовые параметры игровой станции</td>
+                  </tr>
+                  <tr>
+                    <td>Центральный процессор (CPU)</td>
+                    <td>AMD Ryzen 7 7800X3D (AM5, 8 ядер)</td>
+                  </tr>
+                  <tr>
+                    <td>Видеокарта (GPU)</td>
+                    <td>NVIDIA GeForce RTX 4070 SUPER 12GB</td>
+                  </tr>
+                  <tr>
+                    <td>Оперативная память (RAM)</td>
+                    <td>32GB DDR5 6000MHz (2x16GB)</td>
+                  </tr>
+                  <tr>
+                    <td>Накопитель (SSD NVMe)</td>
+                    <td>Samsung 990 PRO 2TB M.2</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Калькулятор стоимости комплектующих ПК (Лабораторная работа 5) -->
+        <section class="calculator-block col-12 order-3" id="calc-l5-section">
+          <div class="card p-3 p-md-4 shadow-sm custom-card">
+            <h2 class="h4 mb-3">Калькулятор стоимости комплектующих ПК</h2>
+
+            <form id="order-calc-form-l5">
+              <!-- Выбор товара -->
+              <div class="mb-3">
+                <label for="product-select-l5" class="form-label fw-medium">Выберите комплектующее:</label>
+                <select id="product-select-l5" name="product" class="form-select" required>
+                  <optgroup label="Процессоры">
+                    <option value="14500">AMD Ryzen 5 5600 (14 500 руб.)</option>
+                    <option value="22000">Intel Core i5-13400F (22 000 руб.)</option>
+                    <option value="38500" selected>AMD Ryzen 7 7800X3D (38 500 руб.)</option>
+                    <option value="62000">Intel Core i9-14900K (62 000 руб.)</option>
+                  </optgroup>
+                  <optgroup label="Видеокарты">
+                    <option value="32000">NVIDIA GeForce RTX 4060 8GB (32 000 руб.)</option>
+                    <option value="65000">NVIDIA GeForce RTX 4070 SUPER 12GB (65 000 руб.)</option>
+                    <option value="115000">NVIDIA GeForce RTX 4080 SUPER 16GB (115 000 руб.)</option>
+                    <option value="210000">NVIDIA GeForce RTX 4090 24GB (210 000 руб.)</option>
+                  </optgroup>
+                  <optgroup label="Накопители & ОЗУ">
+                    <option value="7500">SSD NVMe Kingston KC3000 1TB (7 500 руб.)</option>
+                    <option value="14000">SSD NVMe Samsung 990 PRO 2TB (14 000 руб.)</option>
+                    <option value="11000">ОЗУ G.Skill Ripjaws S5 DDR5 32GB (2x16GB) (11 000 руб.)</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <!-- Количество товара -->
+              <div class="mb-3">
+                <label for="calc-quantity-l5" class="form-label fw-medium">Количество товара:</label>
+                <input type="text" id="calc-quantity-l5" name="calc-quantity" class="form-control" placeholder="Введите количество (целое число)" value="1" required />
+              </div>
+
+              <!-- Кнопка расчета -->
+              <div class="d-grid mb-3">
+                <button type="button" id="calc-btn-l5" class="btn custom-submit-btn fw-semibold py-2">Рассчитать стоимость</button>
+              </div>
+            </form>
+
+            <!-- Вывод результатов и ошибок Лаб 5 -->
+            <div id="calc-error-output-l5" class="text-danger fw-medium mt-2 text-center" role="alert"></div>
+            <div id="calc-result-output-l5" class="alert alert-success mt-3 fs-5 fw-bold text-center mb-0" role="status"></div>
+
+          </div>
+        </section>
+
+        <!-- 4. Динамический калькулятор сборки ПК (Лабораторная работа 6) -->
+        <section class="calculator-block col-12 order-4" id="calc-l6-section">
+          <div class="card p-3 p-md-4 shadow-sm custom-card">
+            <h2 class="h4 mb-3">Динамический калькулятор сборки ПК</h2>
+
+            <form id="calc-form-l6">
+              <!-- 1. Количество -->
+              <div class="mb-3">
+                <label for="quantity-l6" class="form-label fw-medium">Количество комплектов / сборок:</label>
+                <input type="text" id="quantity-l6" name="quantity" class="form-control" value="1" required />
+                <div id="error-output-l6" class="text-danger small mt-1"></div>
+              </div>
+
+              <!-- 2. Тип сборки (Радиокнопки) -->
+              <div class="mb-3">
+                <label class="form-label fw-medium d-block">Выберите конфигурацию сборки ПК:</label>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="radio" name="serviceType" id="type1" value="35000" checked />
+                  <label class="form-check-label" for="type1">
+                    1. Офисный ПК (35 000 руб.) — без дополнительных опций
+                  </label>
+                </div>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="radio" name="serviceType" id="type2" value="75000" />
+                  <label class="form-check-label" for="type2">
+                    2. Игровой ПК (75 000 руб.) — с выбором видеокарты
+                  </label>
+                </div>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="radio" name="serviceType" id="type3" value="120000" />
+                  <label class="form-check-label" for="type3">
+                    3. Кастомная рабочая станция (120 000 руб.) — с доп. сервисом
+                  </label>
+                </div>
+              </div>
+
+              <!-- 3. Дополнительная опция (Селект) — Отображается ТОЛЬКО для 2-го типа -->
+              <div class="mb-3" id="select-container" style="display: none;">
+                <label for="service-select-l6" class="form-label fw-medium">Выберите видеокарту:</label>
+                <select id="service-select-l6" name="serviceSelect" class="form-select">
+                  <option value="32000">NVIDIA GeForce RTX 4060 8GB (+32 000 руб.)</option>
+                  <option value="65000">NVIDIA GeForce RTX 4070 SUPER (+65 000 руб.)</option>
+                  <option value="115000">NVIDIA GeForce RTX 4080 SUPER (+115 000 руб.)</option>
+                </select>
+              </div>
+
+              <!-- 4. Дополнительное свойство (Чекбокс) — Отображается ТОЛЬКО для 3-го типа -->
+              <div class="mb-3" id="checkbox-container" style="display: none;">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="service-checkbox-l6" name="serviceCheckbox" value="15000" />
+                  <label class="form-check-label fw-medium" for="service-checkbox-l6">
+                    Кастомное жидкостное охлаждение и премиум кабель-менеджмент (+15 000 руб.)
+                  </label>
+                </div>
+              </div>
+            </form>
+
+            <!-- Итоговый вывод результатов Лаб 6 -->
+            <div id="result-output-l6" class="alert alert-success mt-3 fs-5 fw-bold text-center mb-0" role="status">
+              Стоимость сборки: 35 000 руб.
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 5. Форма обратной связи -->
+        <section class="form-block col-12 order-5" id="form-section">
+          <div class="card p-3 p-md-4 shadow-sm custom-card">
+            <h2 class="h4 mb-3">Форма обратной связи</h2>
+
+            <form action="https://httpbin.org/post" method="POST">
+
+              <div class="mb-3">
+                <label for="field-fio" class="form-label fw-medium">ФИО:</label>
+                <input name="field-fio"
+                  id="field-fio"
+                  type="text"
+                  class="form-control"
+                  placeholder="Введите ФИО" 
+                  pattern="[A-Za-zA-Яа-яЁё\s\-]+"
+                  title="ФИО должно содержать только буквы и пробелы (без цифр)"
+                  required />
+              </div>
+
+              <div class="mb-3">
+                <label for="field-tel" class="form-label fw-medium">Телефон:</label>
+                <input name="field-tel"
+                  id="field-tel"
+                  type="tel"
+                  class="form-control"
+                  placeholder="+7 (999) 000-00-00" 
+                  pattern="[\+0-9\s\-\(\)]+"
+                  title="Номер телефона должен содержать только цифры и символы +,-"
+                  required />
+              </div>
+
+              <div class="mb-3">
+                <label for="field-email" class="form-label fw-medium">e-mail:</label>
+                <input name="field-email"
+                  id="field-email"
+                  type="email"
+                  class="form-control"
+                  placeholder="Введите вашу почту" />
+              </div>
+
+              <div class="mb-3">
+                <label for="field-date" class="form-label fw-medium">Дата рождения:</label>
+                <input id="field-date"
+                  name="field-date"
+                  value="2005-01-01"
+                  type="date"
+                  class="form-control"
+                  required />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-medium d-block">Пол:</label>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input"
+                    type="radio"
+                    checked="checked"
+                    id="gender-male"
+                    name="radio-gender"
+                    value="male" />
+                  <label class="form-check-label" for="gender-male">Мужской</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input"
+                    type="radio"
+                    id="gender-female"
+                    name="radio-gender"
+                    value="female" />
+                  <label class="form-check-label" for="gender-female">Женский</label>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="field-languages" class="form-label fw-medium">Любимый язык программирования:</label>
+                <select id="field-languages"
+                  name="field-languages[]"
+                  class="form-select"
+                  multiple="multiple"
+                  size="5">
+                  <option value="Pascal">Pascal</option>
+                  <option value="C">C</option>
+                  <option value="C++" selected="selected">C++</option>
+                  <option value="JavaScript">JavaScript</option>
+                  <option value="PHP">PHP</option>
+                  <option value="Python">Python</option>
+                  <option value="Java">Java</option>
+                  <option value="Haskel">Haskel</option>
+                  <option value="Clojure">Clojure</option>
+                  <option value="Prolog">Prolog</option>
+                  <option value="Scala">Scala</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="field-bio" class="form-label fw-medium">Биография:</label>
+                <textarea id="field-bio"
+                  name="field-bio"
+                  class="form-control"
+                  rows="3">Расскажите о себе...</textarea>
+              </div>
+
+              <div class="mb-3 form-check">
+                <input type="checkbox"
+                  class="form-check-input"
+                  id="check-contract"
+                  name="check-contract"
+                  required />
+                <label class="form-check-label" for="check-contract">С контрактом ознакомлен(а)</label>
+              </div>
+
+              <button type="submit" class="btn custom-submit-btn px-4 py-2 fw-semibold">Сохранить</button>
+
+            </form>
+          </div>
+        </section>
+
+      </div>
+
+    </main>
+
+    <!-- Подвал сайта (Footer) -->
+    <footer class="footer py-3 text-center border-top mt-5">
+      <div class="container">
+        <span>(c) Бычков Никита 2026</span>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Ограничение даты рождения -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dateInput = document.getElementById("field-date");
+        if (dateInput) {
+          const today = new Date().toISOString().split("T")[0];
+          dateInput.setAttribute("max", today);
+        }
+      });
+    </script>
+
+  </body>
 
 </html>
