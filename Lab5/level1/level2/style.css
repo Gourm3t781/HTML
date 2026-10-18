@@ -1,0 +1,51 @@
+body {
+  background-color: #FFFBEB;
+  color: #78350F;
+  font-family: sans-serif;
+}
+
+h1, h2, h3, .site-title {
+  color: #78350F;
+}
+
+.header {
+  background-color: #FEF3C7;
+  border-color: #FCD34D !important;
+}
+
+.custom-card {
+  background-color: #FFFBEB;
+  border: 1px solid #FCD34D;
+  border-radius: 10px;
+}
+
+.form-control,
+.form-select {
+  border-color: #D97706;
+  background-color: #FFFFFF;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #B45309;
+  box-shadow: 0 0 0 0.25rem rgba(217, 119, 6, 0.25);
+}
+
+#calc-btn {
+  background-color: #FDE68A;
+  color: #78350F;
+  border: 1px solid #D97706;
+  transition: all 0.25s ease;
+}
+
+#calc-btn:hover {
+  background-color: #D97706;
+  color: #FFFFFF;
+  border-color: #B45309;
+}
+
+.footer {
+  background-color: #FEF3C7;
+  border-color: #FCD34D !important;
+  color: #78350F;
+}
