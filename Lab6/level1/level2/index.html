@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Лабораторная работа №6 — Калькулятор сборки ПК</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- Кастомные стили -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Подключение внешнего JS файла с defer -->
+  <script src="script.js" defer></script>
+</head>
+
+<body class="bg-light">
+
+  <header class="header py-3 mb-4 border-bottom shadow-sm">
+    <div class="container d-flex align-items-center justify-content-between">
+      <span class="site-title h4 mb-0 fw-bold">Web-интерфейс</span>
+      <nav class="nav-menu">
+        <a href="../index.html" class="btn btn-outline-secondary btn-sm">На главную</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container my-4">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <div class="card shadow-sm p-4 custom-card">
+          <h1 class="h3 mb-4 text-center">Калькулятор сборки ПК</h1>
+
+          <form id="calc-form">
+            
+            <!-- 1. Количество -->
+            <div class="mb-3">
+              <label for="quantity" class="form-label fw-medium">Количество сборщиков / комплектов:</label>
+              <input type="text" id="quantity" name="quantity" class="form-control" value="1" required />
+              <div id="error-output" class="text-danger small mt-1"></div>
+            </div>
+
+            <!-- 2. Выбор типа сборки (Радиокнопки, 3 варианта) -->
+            <div class="mb-3">
+              <label class="form-label fw-medium d-block">Конфигурация сборки ПК:</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="serviceType" id="type1" value="35000" checked />
+                <label class="form-check-label" for="type1">
+                  1. Офисный ПК (35 000 руб.) — без доп. опций
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="serviceType" id="type2" value="75000" />
+                <label class="form-check-label" for="type2">
+                  2. Игровой ПК (75 000 руб.) — с выбором видеокарты
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="serviceType" id="type3" value="120000" />
+                <label class="form-check-label" for="type3">
+                  3. Кастомная станция (120 000 руб.) — с доп. опцией кабель-менеджмента
+                </label>
+              </div>
+            </div>
+
+            <!-- 3. Опция товара (Селект) — отображается ТОЛЬКО для 2-го типа -->
+            <div class="mb-3" id="select-container" style="display: none;">
+              <label for="service-select" class="form-label fw-medium">Выберите видеокарту:</label>
+              <select id="service-select" name="serviceSelect" class="form-select">
+                <option value="32000">NVIDIA GeForce RTX 4060 8GB (+32 000 руб.)</option>
+                <option value="65000">NVIDIA GeForce RTX 4070 SUPER (+65 000 руб.)</option>
+                <option value="115000">NVIDIA GeForce RTX 4080 SUPER (+115 000 руб.)</option>
+              </select>
+            </div>
+
+            <!-- 4. Свойство товара (Чекбокс) — отображается ТОЛЬКО для 3-го типа -->
+            <div class="mb-3" id="checkbox-container" style="display: none;">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="service-checkbox" name="serviceCheckbox" value="15000" />
+                <label class="form-check-label fw-medium" for="service-checkbox">
+                  Премиум жидкостное охлаждение и кастомный кабель-менеджмент (+15 000 руб.)
+                </label>
+              </div>
+            </div>
+
+          </form>
+
+          <!-- Вывод итоговой стоимости -->
+          <div id="result-output" class="alert alert-success mt-3 fs-5 fw-bold text-center" role="status">
+            Стоимость сборки: 35 000 руб.
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer py-3 text-center border-top mt-5 bg-white">
+    <div class="container">
+      <span>(c) Бычков Никита 2026</span>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
