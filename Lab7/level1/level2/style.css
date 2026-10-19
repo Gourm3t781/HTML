@@ -28,7 +28,7 @@ a:hover {
   color: #78350F;
 }
 
-/* Увеличенный и разборчивый логотип в шапке с сохранением пропорций */
+/* Логотип в шапке */
 .logo {
   height: 56px;
   width: auto;
@@ -140,9 +140,9 @@ a:hover {
   border-color: #B45309;
 }
 
-/* Увеличенные стили для слайдера (Лаб 7) */
+/* Слайдер */
 .custom-slider-img {
-  max-height: 500px; /* Изменили с 350px на 500px для увеличения размера */
+  max-height: 500px;
   width: 100%;
   object-fit: cover;
 }
@@ -158,4 +158,11 @@ a:hover {
   background-color: #FEF3C7;
   border-color: #FCD34D !important;
   color: #78350F;
+}
+
+/* ПЕРЕСТАНОВКА БЛОКОВ В МОБИЛЬНОМ РЕЖИМЕ (Таблица выше списка ссылок) */
+@media (max-width: 767.98px) {
+  .row > #table-section {
+    order: -1;
+  }
 }
