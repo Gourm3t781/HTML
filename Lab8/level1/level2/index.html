@@ -29,8 +29,8 @@
 
         <!-- Меню со ссылками -->
         <nav class="nav-menu d-flex flex-column flex-md-row gap-2 gap-md-3 w-100 w-md-auto text-center align-items-center">
-          <a href="#table-section" class="btn custom-nav-btn">Таблица ПК</a>
           <a href="#links" class="btn custom-nav-btn">Ссылки</a>
+          <a href="#table-section" class="btn custom-nav-btn">Таблица ПК</a>
           <a href="#calc-l5-section" class="btn custom-nav-btn">Калькулятор цен</a>
           <a href="#calc-l6-section" class="btn custom-nav-btn">Динамический калькулятор</a>
           <a href="#slider-section" class="btn custom-nav-btn">Галерея</a>
@@ -46,46 +46,7 @@
 
       <div class="row g-4">
 
-        <!-- 2. Таблица (Тематика ПК) — на мобильных выше ссылок (order-1), на ПК со смещением -->
-        <section class="table-block col-12 order-1 order-md-2" id="table-section">
-          <div class="card p-3 p-md-4 shadow-sm custom-card">
-            <h2 class="h4 mb-3">Спецификация игровой сборки ПК</h2>
-
-            <div class="table-responsive">
-              <table class="table table-bordered custom-table mb-0">
-                <thead>
-                  <tr>
-                    <th scope="col">Компонент</th>
-                    <th scope="col">Выбранная модель / Характеристика</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td colspan="2" class="merged text-center fw-semibold">Базовые параметры игровой станции</td>
-                  </tr>
-                  <tr>
-                    <td>Центральный процессор (CPU)</td>
-                    <td>AMD Ryzen 7 7800X3D (AM5, 8 ядер)</td>
-                  </tr>
-                  <tr>
-                    <td>Видеокарта (GPU)</td>
-                    <td>NVIDIA GeForce RTX 4070 SUPER 12GB</td>
-                  </tr>
-                  <tr>
-                    <td>Оперативная память (RAM)</td>
-                    <td>32GB DDR5 6000MHz (2x16GB)</td>
-                  </tr>
-                  <tr>
-                    <td>Накопитель (SSD NVMe)</td>
-                    <td>Samsung 990 PRO 2TB M.2</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-        <!-- 1. Список гиперссылок — на мобильных ниже таблицы (order-2), на ПК выше -->
+        <!-- 1. Список гиперссылок (на мобильных идет вторым, на ПК — первым) -->
         <section class="links-block col-12 order-2 order-md-1" id="links">
           <div class="card p-3 p-md-4 shadow-sm custom-card">
             <h2 class="h4 mb-3">Маркированный список гиперссылок</h2>
@@ -196,8 +157,47 @@
           </div>
         </section>
 
+        <!-- 2. Таблица (Тематика ПК) (на мобильных идет первым, на ПК — вторым) -->
+        <section class="table-block col-12 order-1 order-md-2" id="table-section">
+          <div class="card p-3 p-md-4 shadow-sm custom-card">
+            <h2 class="h4 mb-3">Спецификация игровой сборки ПК</h2>
+
+            <div class="table-responsive">
+              <table class="table table-bordered custom-table mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">Компонент</th>
+                    <th scope="col">Выбранная модель / Характеристика</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="2" class="merged text-center fw-semibold">Базовые параметры игровой станции</td>
+                  </tr>
+                  <tr>
+                    <td>Центральный процессор (CPU)</td>
+                    <td>AMD Ryzen 7 7800X3D (AM5, 8 ядер)</td>
+                  </tr>
+                  <tr>
+                    <td>Видеокарта (GPU)</td>
+                    <td>NVIDIA GeForce RTX 4070 SUPER 12GB</td>
+                  </tr>
+                  <tr>
+                    <td>Оперативная память (RAM)</td>
+                    <td>32GB DDR5 6000MHz (2x16GB)</td>
+                  </tr>
+                  <tr>
+                    <td>Накопитель (SSD NVMe)</td>
+                    <td>Samsung 990 PRO 2TB M.2</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
         <!-- 3. Калькулятор стоимости комплектующих ПК (Лаб 5) -->
-        <section class="calculator-block col-12 order-3" id="calc-l5-section">
+        <section class="calculator-block col-12 order-3 order-md-3" id="calc-l5-section">
           <div class="card p-3 p-md-4 shadow-sm custom-card">
             <h2 class="h4 mb-3">Калькулятор стоимости комплектующих ПК</h2>
 
@@ -246,7 +246,7 @@
         </section>
 
         <!-- 4. Динамический калькулятор сборки ПК (Лаб 6) -->
-        <section class="calculator-block col-12 order-4" id="calc-l6-section">
+        <section class="calculator-block col-12 order-4 order-md-4" id="calc-l6-section">
           <div class="card p-3 p-md-4 shadow-sm custom-card">
             <h2 class="h4 mb-3">Динамический калькулятор сборки ПК</h2>
 
@@ -311,7 +311,7 @@
         </section>
 
         <!-- 5. Галерея / Слайдер изображений (Лаб 7) -->
-        <section class="slider-block col-12 order-5" id="slider-section">
+        <section class="slider-block col-12 order-5 order-md-5" id="slider-section">
           <div class="card p-3 p-md-4 shadow-sm custom-card">
             <h2 class="h4 mb-3">Галерея комплектующих</h2>
 
@@ -338,7 +338,7 @@
 
     </main>
 
-    <!-- ПОПАП С ФОРМОЙ ОБРАТНОЙ СВЯЗИ (Лабораторная работа 8 с полными полями из Лаб 7) -->
+    <!-- ПОПАП С ФОРМОЙ ОБРАТНОЙ СВЯЗИ (Лабораторная работа 8) -->
     <div id="form-popup-overlay" class="form-popup-overlay" style="display: none;">
       <div class="form-popup-container card p-3 p-md-4 shadow custom-card position-relative">
         
@@ -347,113 +347,68 @@
 
         <h2 class="h4 mb-3 text-center">Форма обратной связи</h2>
 
+        <!-- Форма с полями по заданию 8 -->
         <form id="feedback-form" action="https://formcarry.com/s/your-form-endpoint" method="POST">
 
           <div class="mb-2">
             <label for="field-fio" class="form-label fw-medium mb-1">ФИО:</label>
-            <input name="field-fio"
+            <input name="fio"
               id="field-fio"
               type="text"
               class="form-control form-control-sm"
               placeholder="Введите ФИО" 
-              pattern="[A-Za-zA-Яа-яЁё\s\-]+"
-              title="ФИО должно содержать только буквы и пробелы (без цифр)"
-              required />
-          </div>
-
-          <div class="mb-2">
-            <label for="field-tel" class="form-label fw-medium mb-1">Телефон:</label>
-            <input name="field-tel"
-              id="field-tel"
-              type="tel"
-              class="form-control form-control-sm"
-              placeholder="+7 (999) 000-00-00" 
-              pattern="[\+0-9\s\-\(\)]+"
-              title="Номер телефона должен содержать только цифры и символы +,-"
               required />
           </div>
 
           <div class="mb-2">
             <label for="field-email" class="form-label fw-medium mb-1">e-mail:</label>
-            <input name="field-email"
+            <input name="email"
               id="field-email"
               type="email"
               class="form-control form-control-sm"
-              placeholder="Введите вашу почту"
+              placeholder="Введите вашу почту" 
               required />
           </div>
 
           <div class="mb-2">
-            <label for="field-date" class="form-label fw-medium mb-1">Дата рождения:</label>
-            <input id="field-date"
-              name="field-date"
-              value="2005-01-01"
-              type="date"
+            <label for="field-tel" class="form-label fw-medium mb-1">Телефон:</label>
+            <input name="phone"
+              id="field-tel"
+              type="tel"
               class="form-control form-control-sm"
+              placeholder="+7 (999) 000-00-00" 
               required />
           </div>
 
           <div class="mb-2">
-            <label class="form-label fw-medium d-block mb-1">Пол:</label>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input"
-                type="radio"
-                checked="checked"
-                id="gender-male"
-                name="radio-gender"
-                value="male" />
-              <label class="form-check-label small" for="gender-male">Мужской</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input"
-                type="radio"
-                id="gender-female"
-                name="radio-gender"
-                value="female" />
-              <label class="form-check-label small" for="gender-female">Женский</label>
-            </div>
-          </div>
-
-          <div class="mb-2">
-            <label for="field-languages" class="form-label fw-medium mb-1">Любимый язык программирования:</label>
-            <select id="field-languages"
-              name="field-languages[]"
-              class="form-select form-select-sm"
-              multiple="multiple"
-              size="3">
-              <option value="Pascal">Pascal</option>
-              <option value="C">C</option>
-              <option value="C++" selected="selected">C++</option>
-              <option value="JavaScript">JavaScript</option>
-              <option value="PHP">PHP</option>
-              <option value="Python">Python</option>
-              <option value="Java">Java</option>
-              <option value="Haskel">Haskel</option>
-              <option value="Clojure">Clojure</option>
-              <option value="Prolog">Prolog</option>
-              <option value="Scala">Scala</option>
-            </select>
-          </div>
-
-          <div class="mb-2">
-            <label for="field-bio" class="form-label fw-medium mb-1">Биография:</label>
-            <textarea id="field-bio"
-              name="field-bio"
+            <label for="field-org" class="form-label fw-medium mb-1">Организация:</label>
+            <input name="organization"
+              id="field-org"
+              type="text"
               class="form-control form-control-sm"
-              rows="2">Расскажите о себе...</textarea>
+              placeholder="Название организации (необязательно)" />
+          </div>
+
+          <div class="mb-2">
+            <label for="field-msg" class="form-label fw-medium mb-1">Сообщение:</label>
+            <textarea id="field-msg"
+              name="message"
+              class="form-control form-control-sm"
+              rows="2"
+              placeholder="Ваше сообщение..." required></textarea>
           </div>
 
           <div class="mb-3 form-check">
             <input type="checkbox"
               class="form-check-input"
-              id="check-contract"
-              name="check-contract"
+              id="check-policy"
+              name="policy"
               required />
-            <label class="form-check-label small" for="check-contract">С контрактом ознакомлен(а)</label>
+            <label class="form-check-label small" for="check-policy">Согласен с политикой обработки персональных данных</label>
           </div>
 
           <div class="d-grid">
-            <button type="submit" id="form-submit-btn" class="btn custom-submit-btn py-2 fw-semibold">Сохранить</button>
+            <button type="submit" id="form-submit-btn" class="btn custom-submit-btn py-2 fw-semibold">Отправить</button>
           </div>
 
         </form>
@@ -473,17 +428,6 @@
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Ограничение даты рождения -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const dateInput = document.getElementById("field-date");
-        if (dateInput) {
-          const today = new Date().toISOString().split("T")[0];
-          dateInput.setAttribute("max", today);
-        }
-      });
-    </script>
 
   </body>
 
