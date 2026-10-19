@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
-  // --- ЛОГИКА ПОПАПА И ФОРМЫ ОБРАТНОЙ СВЯЗИ (ЛАБОРАТОРНАЯ 8 СО ВСЕМИ ПОЛЯМИ ИЗ ЛАБ 7) ---
+  // --- ЛОГИКА ПОПАПА И ФОРМЫ ОБРАТНОЙ СВЯЗИ (ЛАБОРАТОРНАЯ 8) ---
   const openFormBtn = document.getElementById('open-form-btn');
   const formAnchorLink = document.getElementById('form-anchor-link');
   const closeFormBtn = document.getElementById('close-form-btn');
@@ -174,63 +174,36 @@ document.addEventListener('DOMContentLoaded', function () {
   const formStatusMsg = document.getElementById('form-status-msg');
 
   const fieldFio = document.getElementById('field-fio');
-  const fieldTel = document.getElementById('field-tel');
   const fieldEmail = document.getElementById('field-email');
-  const fieldDate = document.getElementById('field-date');
-  const fieldLanguages = document.getElementById('field-languages');
-  const fieldBio = document.getElementById('field-bio');
-  const checkContract = document.getElementById('check-contract');
-  const genderRadios = document.querySelectorAll('input[name="radio-gender"]');
+  const fieldTel = document.getElementById('field-tel');
+  const fieldOrg = document.getElementById('field-org');
+  const fieldMsg = document.getElementById('field-msg');
+  const checkPolicy = document.getElementById('check-policy');
 
   // 1. Восстановление данных из localStorage при загрузке страницы
   if (localStorage.getItem('feedback_fio')) fieldFio.value = localStorage.getItem('feedback_fio');
-  if (localStorage.getItem('feedback_tel')) fieldTel.value = localStorage.getItem('feedback_tel');
   if (localStorage.getItem('feedback_email')) fieldEmail.value = localStorage.getItem('feedback_email');
-  if (localStorage.getItem('feedback_date')) fieldDate.value = localStorage.getItem('feedback_date');
-  if (localStorage.getItem('feedback_bio')) fieldBio.value = localStorage.getItem('feedback_bio');
-  if (localStorage.getItem('feedback_contract') === 'true') {
-    checkContract.checked = true;
-  }
-  
-  const savedGender = localStorage.getItem('feedback_gender');
-  if (savedGender) {
-    const radioToSet = document.getElementById('gender-' + savedGender);
-    if (radioToSet) radioToSet.checked = true;
-  }
-
-  const savedLangs = JSON.parse(localStorage.getItem('feedback_languages') || '[]');
-  if (savedLangs.length > 0 && fieldLanguages) {
-    Array.from(fieldLanguages.options).forEach(opt => {
-      opt.selected = savedLangs.includes(opt.value);
-    });
+  if (localStorage.getItem('feedback_tel')) fieldTel.value = localStorage.getItem('feedback_tel');
+  if (localStorage.getItem('feedback_org')) fieldOrg.value = localStorage.getItem('feedback_org');
+  if (localStorage.getItem('feedback_msg')) fieldMsg.value = localStorage.getItem('feedback_msg');
+  if (localStorage.getItem('feedback_policy') === 'true') {
+    checkPolicy.checked = true;
   }
 
   // Функция сохранения в localStorage при вводе
   function saveToLocalStorage() {
     localStorage.setItem('feedback_fio', fieldFio.value);
-    localStorage.setItem('feedback_tel', fieldTel.value);
     localStorage.setItem('feedback_email', fieldEmail.value);
-    localStorage.setItem('feedback_date', fieldDate.value);
-    localStorage.setItem('feedback_bio', fieldBio.value);
-    localStorage.setItem('feedback_contract', checkContract.checked);
-
-    const checkedGender = document.querySelector('input[name="radio-gender"]:checked');
-    if (checkedGender) {
-      localStorage.setItem('feedback_gender', checkedGender.value);
-    }
-
-    if (fieldLanguages) {
-      const selectedLangs = Array.from(fieldLanguages.selectedOptions).map(opt => opt.value);
-      localStorage.setItem('feedback_languages', JSON.stringify(selectedLangs));
-    }
+    localStorage.setItem('feedback_tel', fieldTel.value);
+    localStorage.setItem('feedback_org', fieldOrg.value);
+    localStorage.setItem('feedback_msg', fieldMsg.value);
+    localStorage.setItem('feedback_policy', checkPolicy.checked);
   }
 
-  [fieldFio, fieldTel, fieldEmail, fieldDate, fieldBio, fieldLanguages].forEach(el => {
-    if (el) el.addEventListener('input', saveToLocalStorage);
-    if (el) el.addEventListener('change', saveToLocalStorage);
+  [fieldFio, fieldEmail, fieldTel, fieldOrg, fieldMsg].forEach(input => {
+    input.addEventListener('input', saveToLocalStorage);
   });
-  checkContract.addEventListener('change', saveToLocalStorage);
-  genderRadios.forEach(r => r.addEventListener('change', saveToLocalStorage));
+  checkPolicy.addEventListener('change', saveToLocalStorage);
 
   // Функция открытия попапа с изменением History API
   function openPopup(pushHistory = true) {
@@ -268,6 +241,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Клик по оверлею закрывает форму
   formPopupOverlay.addEventListener('click', function (e) {
     if (e.target === formPopupOverlay) {
       closePopup(false);
@@ -283,6 +257,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // Если страница загрузилась с хешем #form-popup, сразу открываем попап
   if (window.location.hash === '#form-popup') {
     openPopup(false);
   }
@@ -308,16 +283,14 @@ document.addEventListener('DOMContentLoaded', function () {
           formStatusMsg.textContent = 'Сообщение успешно отправлено!';
           formStatusMsg.className = 'mt-2 text-center small fw-medium text-success';
           
-          // Очистка полей формы и localStorage после успешной отправки
+          // Очистка полей и localStorage после успешной отправки
           feedbackForm.reset();
           localStorage.removeItem('feedback_fio');
-          localStorage.removeItem('feedback_tel');
           localStorage.removeItem('feedback_email');
-          localStorage.removeItem('feedback_date');
-          localStorage.removeItem('feedback_bio');
-          localStorage.removeItem('feedback_contract');
-          localStorage.removeItem('feedback_languages');
-          localStorage.removeItem('feedback_gender');
+          localStorage.removeItem('feedback_tel');
+          localStorage.removeItem('feedback_org');
+          localStorage.removeItem('feedback_msg');
+          localStorage.removeItem('feedback_policy');
 
           setTimeout(() => {
             closePopup(false);
