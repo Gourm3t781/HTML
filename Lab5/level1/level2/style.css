@@ -150,3 +150,10 @@ a:hover {
   border-color: #FCD34D !important;
   color: #78350F;
 }
+
+/* Перестановка блоков в мобильном режиме: таблица выше списка гиперссылок */
+@media (max-width: 767.98px) {
+  .row > #table-section {
+    order: -1;
+  }
+}
