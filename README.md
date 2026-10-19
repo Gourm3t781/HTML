@@ -16,5 +16,5 @@
 🔗 **[Посмотреть опубликованную Лабораторную работу №3](https://Gourm3t781.github.io/HTML/Lab3/level1/level2/index.html)**  
 🔗 **[Посмотреть опубликованную Лабораторную работу №4](https://Gourm3t781.github.io/HTML/Lab4/level1/level2/index.html)**  
 🔗 **[Посмотреть опубликованную Лабораторную работу №5](https://Gourm3t781.github.io/HTML/Lab5/level1/level2/index.html)**  
-🔗 **[Посмотреть опубликованную Лабораторную работу №6](https://Gourm3t781.github.io/HTML/Lab6/level1/level2/index.html)** 
+🔗 **[Посмотреть опубликованную Лабораторную работу №6](https://Gourm3t781.github.io/HTML/Lab6/level1/level2/index.html)**  
 🔗 **[Посмотреть опубликованную Лабораторную работу №7](https://Gourm3t781.github.io/HTML/Lab7/level1/level2/index.html)** 
