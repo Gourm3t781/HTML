@@ -111,32 +111,18 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
-  // --- ЛОГИКА СЛАЙДЕРА / ГАЛЕРЕИ ИЗ ЛАБ 7 ---
+  // --- ЛОГИКА СЛАЙДЕРА / ГАЛЕРЕИ ИЗ ЛАБ 7 (3 слайда без image4) ---
   const sliderImg = document.getElementById('slider-img');
   const sliderCaption = document.getElementById('slider-caption');
   const btnPrev = document.getElementById('slider-prev');
   const btnNext = document.getElementById('slider-next');
 
   if (sliderImg && sliderCaption && btnPrev && btnNext) {
-    // Массив слайдов с реальными файлами изображений
     const slides = [
-  {
-    src: 'image1.jpg',
-    caption: 'Сборка системного блока ПК'
-  },
-  {
-    src: 'image2.jpg',
-    caption: 'Процессор AMD Ryzen 7, установленный в сокет AM4'
-  },
-  {
-    src: 'image3.jpg',
-    caption: 'Игровые комплектующие и процессор'
-  },
-  {
-    src: 'image4.jpg',
-    caption: 'Зеленая материнская плата и микросхема'
-  }
-];
+      { src: 'image1.jpg', caption: 'Сборка системного блока ПК' },
+      { src: 'image2.jpg', caption: 'Процессор AMD Ryzen 7 в сокете AM4' },
+      { src: 'image3.jpg', caption: 'Игровые комплектующие и процессор' }
+    ];
 
     let currentIndex = 0;
     let autoSlideInterval = null;
@@ -149,7 +135,6 @@ document.addEventListener('DOMContentLoaded', function () {
       } else {
         currentIndex = index;
       }
-
       sliderImg.src = slides[currentIndex].src;
       sliderCaption.textContent = slides[currentIndex].caption;
     }
