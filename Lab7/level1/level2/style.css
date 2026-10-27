@@ -28,7 +28,7 @@ a:hover {
   color: #78350F;
 }
 
-/* Логотип в шапке */
+/* Увеличенный и разборчивый логотип в шапке с сохранением пропорций */
 .logo {
   height: 56px;
   width: auto;
@@ -140,9 +140,15 @@ a:hover {
   border-color: #B45309;
 }
 
-/* Слайдер */
+/* Стили для слайдера и десктопной галереи (Лаб 7) */
 .custom-slider-img {
   max-height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.custom-desktop-gallery-img {
+  height: 220px;
   width: 100%;
   object-fit: cover;
 }
@@ -158,11 +164,4 @@ a:hover {
   background-color: #FEF3C7;
   border-color: #FCD34D !important;
   color: #78350F;
-}
-
-/* ПЕРЕСТАНОВКА БЛОКОВ В МОБИЛЬНОМ РЕЖИМЕ (Таблица выше списка ссылок) */
-@media (max-width: 767.98px) {
-  .row > #table-section {
-    order: -1;
-  }
 }
