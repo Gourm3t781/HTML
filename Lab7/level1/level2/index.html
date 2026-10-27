@@ -156,7 +156,7 @@
           </div>
         </section>
 
-        <!-- 2. Таблица (Тематика ПК) — выше ссылок на мобильных устройствах -->
+        <!-- 2. Таблица (Тематика ПК) -->
         <section class="table-block col-12 order-1 order-md-2" id="table-section">
           <div class="card p-3 p-md-4 shadow-sm custom-card">
             <h2 class="h4 mb-3">Спецификация игровой сборки ПК</h2>
@@ -309,7 +309,7 @@
           </div>
         </section>
 
-        <!-- 5. Галерея / Слайдер изображений (Лаб 7: слайдер на мобильных, 3 картинки на ПК) -->
+        <!-- 5. Галерея / Слайдер изображений (Лаб 7) -->
         <section class="slider-block col-12 order-5 order-md-5" id="slider-section">
           <div class="card p-3 p-md-4 shadow-sm custom-card">
             <h2 class="h4 mb-3">Галерея комплектующих</h2>
@@ -353,7 +353,7 @@
           </div>
         </section>
 
-        <!-- 6. Форма обратной связи — в самом конце -->
+        <!-- 6. Форма обратной связи — СТРОГО В САМОМ КОНЦЕ -->
         <section class="form-block col-12 order-6 order-md-6" id="form-section">
           <div class="card p-3 p-md-4 shadow-sm custom-card">
             <h2 class="h4 mb-3">Форма обратной связи</h2>
@@ -408,99 +408,80 @@
                 <div class="form-check form-check-inline">
                   <input class="form-check-input"
                     type="radio"
-                    checked="checked"
-                    id="gender-male"
-                    name="radio-gender"
-                                <div class="mb-3">
-                <label class="form-label fw-medium d-block">Пол:</label>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input"
-                    type="radio"
-                    checked="checked"
-                    id="gender-male"
-                    name="radio-gender"
-                    value="male" />
-                  <label class="form-check-label" for="gender-male">Мужской</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input"
-                    type="radio"
-                    id="gender-female"
-                    name="radio-gender"
-                    value="female" />
-                  <label class="form-check-label" for="gender-female">Женский</label>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <label for="field-languages" class="form-label fw-medium">Любимый язык программирования:</label>
-                <select id="field-languages"
-                  name="field-languages[]"
-                  class="form-select"
-                  multiple="multiple"
-                  size="5">
-                  <option value="Pascal">Pascal</option>
-                  <option value="C">C</option>
-                  <option value="C++" selected="selected">C++</option>
-                  <option value="JavaScript">JavaScript</option>
-                  <option value="PHP">PHP</option>
-                  <option value="Python">Python</option>
-                  <option value="Java">Java</option>
-                  <option value="Haskel">Haskel</option>
-                  <option value="Clojure">Clojure</option>
-                  <option value="Prolog">Prolog</option>
-                  <option value="Scala">Scala</option>
-                </select>
-              </div>
-
-              <div class="mb-3">
-                <label for="field-bio" class="form-label fw-medium">Биография:</label>
-                <textarea id="field-bio"
-                  name="field-bio"
-                  class="form-control"
-                  rows="3">Расскажите о себе...</textarea>
-              </div>
-
-              <div class="mb-3 form-check">
-                <input type="checkbox"
-                  class="form-check-input"
-                  id="check-contract"
-                  name="check-contract"
-                  required />
-                <label class="form-check-label" for="check-contract">С контрактом ознакомлен(а)</label>
-              </div>
-
-              <button type="submit" class="btn custom-submit-btn px-4 py-2 fw-semibold">Сохранить</button>
-
-            </form>
-          </div>
-        </section>
-
-      </div>
-
-    </main>
-
-    <!-- Подвал сайта (Footer) -->
-    <footer class="footer py-3 text-center border-top mt-5">
-      <div class="container">
-        <span>(c) Бычков Никита 2026</span>
-      </div>
-    </footer>
-
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Ограничение даты рождения -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const dateInput = document.getElementById("field-date");
-        if (dateInput) {
-          const today = new Date().toISOString().split("T")[0];
-          dateInput.setAttribute("max", today);
-        }
-      });
-    </script>
-
-  </body>
-
-</html>
+checked="checked"
+id="gender-male"
+name="radio-gender"
+value="male" />
+<label class="form-check-label" for="gender-male">Мужской</label>
+</div>
+<div class="form-check form-check-inline">
+<input class="form-check-input"
+type="radio"
+id="gender-female"
+name="radio-gender"
+value="female" />
+<label class="form-check-label" for="gender-female">Женский</label>
+</div>
+</div>
+<div class="mb-3">
+<label for="field-languages" class="form-label fw-medium">Любимый язык программирования:</label>
+<select id="field-languages"
+name="field-languages[]"
+class="form-select"
+multiple="multiple"
+size="5">
+<option value="Pascal">Pascal</option>
+<option value="C">C</option>
+<option value="C++" selected="selected">C++</option>
+<option value="JavaScript">JavaScript</option>
+<option value="PHP">PHP</option>
+<option value="Python">Python</option>
+<option value="Java">Java</option>
+<option value="Haskel">Haskel</option>
+<option value="Clojure">Clojure</option>
+<option value="Prolog">Prolog</option>
+<option value="Scala">Scala</option>
+</select>
+</div>
+<div class="mb-3">
+<label for="field-bio" class="form-label fw-medium">Биография:</label>
+<textarea id="field-bio"
+name="field-bio"
+class="form-control"
+rows="3">Расскажите о себе...</textarea>
+</div>
+<div class="mb-3 form-check">
+<input type="checkbox"
+class="form-check-input"
+id="check-contract"
+name="check-contract"
+required />
+<label class="form-check-label" for="check-contract">С контрактом ознакомлен(а)</label>
+</div>
+<button type="submit" class="btn custom-submit-btn px-4 py-2 fw-semibold">Сохранить</button>
+</form>
+</div>
+</section>
+</div>
+</main>
+<!-- Подвал сайта (Footer) -->
+<footer class="footer py-3 text-center border-top mt-5">
+<div class="container">
+<span>(c) Бычков Никита 2026</span>
+</div>
+</footer>
+<!-- Bootstrap 5 JS Bundle -->
+<script src="[https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js](https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js)"></script>
+<!-- Ограничение даты рождения -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+const dateInput = document.getElementById("field-date");
+if (dateInput) {
+const today = new Date().toISOString().split("T")[0];
+dateInput.setAttribute("max", today);
+}
+});
+</script>
+</body>
+  </html>
+  
