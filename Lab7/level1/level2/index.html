@@ -45,7 +45,46 @@
 
       <div class="row g-4">
 
-        <!-- 1. Список гиперссылок -->
+        <!-- 1. Таблица (Тематика ПК) — На мобильных выше, на ПК вторым -->
+        <section class="table-block col-12 order-1 order-md-2" id="table-section">
+          <div class="card p-3 p-md-4 shadow-sm custom-card">
+            <h2 class="h4 mb-3">Спецификация игровой сборки ПК</h2>
+
+            <div class="table-responsive">
+              <table class="table table-bordered custom-table mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">Компонент</th>
+                    <th scope="col">Выбранная модель / Характеристика</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="2" class="merged text-center fw-semibold">Базовые параметры игровой станции</td>
+                  </tr>
+                  <tr>
+                    <td>Центральный процессор (CPU)</td>
+                    <td>AMD Ryzen 7 7800X3D (AM5, 8 ядер)</td>
+                  </tr>
+                  <tr>
+                    <td>Видеокарта (GPU)</td>
+                    <td>NVIDIA GeForce RTX 4070 SUPER 12GB</td>
+                  </tr>
+                  <tr>
+                    <td>Оперативная память (RAM)</td>
+                    <td>32GB DDR5 6000MHz (2x16GB)</td>
+                  </tr>
+                  <tr>
+                    <td>Накопитель (SSD NVMe)</td>
+                    <td>Samsung 990 PRO 2TB M.2</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Список гиперссылок — На мобильных под таблицей, на ПК первым -->
         <section class="links-block col-12 order-2 order-md-1" id="links">
           <div class="card p-3 p-md-4 shadow-sm custom-card">
             <h2 class="h4 mb-3">Маркированный список гиперссылок</h2>
@@ -156,52 +195,12 @@
           </div>
         </section>
 
-        <!-- 2. Таблица (Тематика ПК) -->
-        <section class="table-block col-12 order-1 order-md-2" id="table-section">
-          <div class="card p-3 p-md-4 shadow-sm custom-card">
-            <h2 class="h4 mb-3">Спецификация игровой сборки ПК</h2>
-
-            <div class="table-responsive">
-              <table class="table table-bordered custom-table mb-0">
-                <thead>
-                  <tr>
-                    <th scope="col">Компонент</th>
-                    <th scope="col">Выбранная модель / Характеристика</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td colspan="2" class="merged text-center fw-semibold">Базовые параметры игровой станции</td>
-                  </tr>
-                  <tr>
-                    <td>Центральный процессор (CPU)</td>
-                    <td>AMD Ryzen 7 7800X3D (AM5, 8 ядер)</td>
-                  </tr>
-                  <tr>
-                    <td>Видеокарта (GPU)</td>
-                    <td>NVIDIA GeForce RTX 4070 SUPER 12GB</td>
-                  </tr>
-                  <tr>
-                    <td>Оперативная память (RAM)</td>
-                    <td>32GB DDR5 6000MHz (2x16GB)</td>
-                  </tr>
-                  <tr>
-                    <td>Накопитель (SSD NVMe)</td>
-                    <td>Samsung 990 PRO 2TB M.2</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
         <!-- 3. Калькулятор стоимости комплектующих ПК (Лаб 5) -->
-        <section class="calculator-block col-12 order-3 order-md-3" id="calc-l5-section">
+        <section class="calculator-block col-12 order-3" id="calc-l5-section">
           <div class="card p-3 p-md-4 shadow-sm custom-card">
             <h2 class="h4 mb-3">Калькулятор стоимости комплектующих ПК</h2>
 
             <form id="order-calc-form-l5">
-              <!-- Выбор товара -->
               <div class="mb-3">
                 <label for="product-select-l5" class="form-label fw-medium">Выберите комплектующее:</label>
                 <select id="product-select-l5" name="product" class="form-select" required>
@@ -225,39 +224,33 @@
                 </select>
               </div>
 
-              <!-- Количество товара -->
               <div class="mb-3">
                 <label for="calc-quantity-l5" class="form-label fw-medium">Количество товара:</label>
                 <input type="text" id="calc-quantity-l5" name="calc-quantity" class="form-control" placeholder="Введите количество (целое число)" value="1" required />
               </div>
 
-              <!-- Кнопка расчета -->
               <div class="d-grid mb-3">
                 <button type="button" id="calc-btn-l5" class="btn custom-submit-btn fw-semibold py-2">Рассчитать стоимость</button>
               </div>
             </form>
 
-            <!-- Вывод результатов и ошибок Лаб 5 -->
             <div id="calc-error-output-l5" class="text-danger fw-medium mt-2 text-center" role="alert"></div>
             <div id="calc-result-output-l5" class="alert alert-success mt-3 fs-5 fw-bold text-center mb-0" role="status"></div>
-
           </div>
         </section>
 
         <!-- 4. Динамический калькулятор сборки ПК (Лаб 6) -->
-        <section class="calculator-block col-12 order-4 order-md-4" id="calc-l6-section">
+        <section class="calculator-block col-12 order-4" id="calc-l6-section">
           <div class="card p-3 p-md-4 shadow-sm custom-card">
             <h2 class="h4 mb-3">Динамический калькулятор сборки ПК</h2>
 
             <form id="calc-form-l6">
-              <!-- 1. Количество -->
               <div class="mb-3">
                 <label for="quantity-l6" class="form-label fw-medium">Количество комплектов / сборок:</label>
                 <input type="text" id="quantity-l6" name="quantity" class="form-control" value="1" required />
                 <div id="error-output-l6" class="text-danger small mt-1"></div>
               </div>
 
-              <!-- 2. Тип сборки (Радиокнопки) -->
               <div class="mb-3">
                 <label class="form-label fw-medium d-block">Выберите конфигурацию сборки ПК:</label>
                 <div class="form-check mb-1">
@@ -280,7 +273,6 @@
                 </div>
               </div>
 
-              <!-- 3. Дополнительная опция (Селект) -->
               <div class="mb-3" id="select-container" style="display: none;">
                 <label for="service-select-l6" class="form-label fw-medium">Выберите видеокарту:</label>
                 <select id="service-select-l6" name="serviceSelect" class="form-select">
@@ -290,7 +282,6 @@
                 </select>
               </div>
 
-              <!-- 4. Дополнительное свойство (Чекбокс) -->
               <div class="mb-3" id="checkbox-container" style="display: none;">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="service-checkbox-l6" name="serviceCheckbox" value="15000" />
@@ -301,16 +292,14 @@
               </div>
             </form>
 
-            <!-- Итоговый вывод результатов Лаб 6 -->
             <div id="result-output-l6" class="alert alert-success mt-3 fs-5 fw-bold text-center mb-0" role="status">
               Стоимость сборки: 35 000 руб.
             </div>
-
           </div>
         </section>
 
-        <!-- 5. Галерея / Слайдер изображений (Лаб 7) -->
-        <section class="slider-block col-12 order-5 order-md-5" id="slider-section">
+        <!-- 5. Галерея (Лаб 7) -->
+        <section class="slider-block col-12 order-5" id="slider-section">
           <div class="card p-3 p-md-4 shadow-sm custom-card">
             <h2 class="h4 mb-3">Галерея комплектующих</h2>
 
@@ -353,13 +342,12 @@
           </div>
         </section>
 
-        <!-- 6. Форма обратной связи — СТРОГО В САМОМ КОНЦЕ -->
-        <section class="form-block col-12 order-6 order-md-6" id="form-section">
+        <!-- 6. Форма обратной связи (Лаб 1-7) — В САМОМ КОНЦЕ СТРАНИЦЫ -->
+        <section class="form-block col-12 order-6" id="form-section">
           <div class="card p-3 p-md-4 shadow-sm custom-card">
             <h2 class="h4 mb-3">Форма обратной связи</h2>
 
             <form action="https://httpbin.org/post" method="POST">
-
               <div class="mb-3">
                 <label for="field-fio" class="form-label fw-medium">ФИО:</label>
                 <input name="field-fio"
@@ -421,6 +409,7 @@
                     name="radio-gender"
                     value="female" />
                   <label class="form-check-label" for="gender-female">Женский</label>
+                            <label class="form-check-label" for="gender-female">Женский</label>
                 </div>
               </div>
 
@@ -463,7 +452,6 @@
               </div>
 
               <button type="submit" class="btn custom-submit-btn px-4 py-2 fw-semibold">Сохранить</button>
-
             </form>
           </div>
         </section>
