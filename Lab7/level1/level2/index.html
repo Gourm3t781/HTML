@@ -35,7 +35,6 @@
           <a href="#service-calculator-section" class="btn custom-nav-btn">Калькулятор услуги</a>
           <a href="#gallery-section" class="btn custom-nav-btn">Галерея</a>
           <a href="#form-section" class="btn custom-nav-btn">Форма</a>
-          <button type="button" id="feedback-open-btn" class="btn custom-nav-btn">Обратная связь</button>
         </nav>
 
       </div>
@@ -315,11 +314,11 @@
                   <div class="gallery-slide"><img src="image1.jpg" alt="Фотография 1" class="gallery-img" /></div>
                   <div class="gallery-slide"><img src="image2.jpg" alt="Фотография 2" class="gallery-img" /></div>
                   <div class="gallery-slide"><img src="image3.jpg" alt="Фотография 3" class="gallery-img" /></div>
-                  <div class="gallery-slide"><img src="image1.jpg" alt="Фотография 4" class="gallery-img" /></div>
-                  <div class="gallery-slide"><img src="image2.jpg" alt="Фотография 5" class="gallery-img" /></div>
-                  <div class="gallery-slide"><img src="image3.jpg" alt="Фотография 6" class="gallery-img" /></div>
-                  <div class="gallery-slide"><img src="image1.jpg" alt="Фотография 7" class="gallery-img" /></div>
-                  <div class="gallery-slide"><img src="image2.jpg" alt="Фотография 8" class="gallery-img" /></div>
+                  <div class="gallery-slide"><img src="image4.jpg" alt="Фотография 4" class="gallery-img" /></div>
+                  <div class="gallery-slide"><img src="image5.jpg" alt="Фотография 5" class="gallery-img" /></div>
+                  <div class="gallery-slide"><img src="image6.jpg" alt="Фотография 6" class="gallery-img" /></div>
+                  <div class="gallery-slide"><img src="image7.jpg" alt="Фотография 7" class="gallery-img" /></div>
+                  <div class="gallery-slide"><img src="image8.jpg" alt="Фотография 8" class="gallery-img" /></div>
                 </div>
               </div>
 
@@ -452,51 +451,6 @@
 
     </main>
 
-    <!-- Задание 8: Попап с формой обратной связи -->
-    <div class="feedback-overlay d-none" id="feedback-overlay">
-      <div class="feedback-modal" id="feedback-modal" role="dialog" aria-modal="true" aria-labelledby="feedback-modal-title">
-        <button type="button" class="feedback-close" id="feedback-close-btn" aria-label="Закрыть форму обратной связи">&times;</button>
-        <h2 class="h5 fw-bold mb-3" id="feedback-modal-title">Форма обратной связи</h2>
-
-        <form id="feedback-form">
-          <div class="mb-3">
-            <label for="feedback-fio" class="form-label fw-medium">ФИО:</label>
-            <input type="text" id="feedback-fio" name="fio" class="form-control" placeholder="Введите ФИО" autocomplete="name" required />
-          </div>
-
-          <div class="mb-3">
-            <label for="feedback-email" class="form-label fw-medium">Email:</label>
-            <input type="email" id="feedback-email" name="email" class="form-control" placeholder="Введите вашу почту" autocomplete="email" required />
-          </div>
-
-          <div class="mb-3">
-            <label for="feedback-phone" class="form-label fw-medium">Телефон:</label>
-            <input type="tel" id="feedback-phone" name="phone" class="form-control" placeholder="+7 (999) 000-00-00" autocomplete="tel" required />
-          </div>
-
-          <div class="mb-3">
-            <label for="feedback-organization" class="form-label fw-medium">Организация:</label>
-            <input type="text" id="feedback-organization" name="organization" class="form-control" placeholder="Название организации (необязательно)" autocomplete="organization" />
-          </div>
-
-          <div class="mb-3">
-            <label for="feedback-message" class="form-label fw-medium">Сообщение:</label>
-            <textarea id="feedback-message" name="message" class="form-control" rows="3" placeholder="Текст сообщения" required></textarea>
-          </div>
-
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="feedback-agreement" name="agreement" required />
-            <label class="form-check-label" for="feedback-agreement">Согласен(на) с политикой обработки персональных данных</label>
-          </div>
-
-          <button type="submit" class="btn custom-submit-btn w-100 py-2 fw-semibold">Отправить</button>
-        </form>
-
-        <!-- Сообщение об успешной отправке или ошибке -->
-        <div id="feedback-status" class="feedback-status mt-3 fw-medium" role="status" aria-live="polite"></div>
-      </div>
-    </div>
-
     <!-- Подвал сайта (Footer) -->
     <footer class="footer py-3 text-center border-top mt-5">
       <div class="container">
@@ -511,7 +465,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-    <!-- Скрипты заданий 6, 7 и 8 -->
+    <!-- Скрипты заданий 6 и 7 -->
     <script src="script.js"></script>
 
     <!-- Скрипты: ограничение даты рождения и калькулятор -->
@@ -566,4 +520,4 @@
 
   </body>
 
-</html>
+</html>
