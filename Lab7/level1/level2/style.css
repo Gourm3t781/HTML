@@ -27,8 +27,7 @@ a:hover {
 .site-title {
   color: #78350F;
 }
-
-/* Увеличенный и разборчивый логотип в шапке с сохранением пропорций */
+/* Исправление и стилизация логотипа в шапке */
 .logo {
   height: 56px;
   width: auto;
@@ -40,7 +39,6 @@ a:hover {
   padding: 2px;
   box-shadow: 0 2px 5px rgba(120, 53, 15, 0.15);
 }
-
 /* Кнопки навигации */
 .custom-nav-btn {
   font-size: 15px;
@@ -140,19 +138,6 @@ a:hover {
   border-color: #B45309;
 }
 
-/* Стили для слайдера и десктопной галереи (Лаб 7) */
-.custom-slider-img {
-  max-height: 500px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.custom-desktop-gallery-img {
-  height: 220px;
-  width: 100%;
-  object-fit: cover;
-}
-
 /* Изображения */
 .responsive-img {
   max-width: 300px;
@@ -165,3 +150,178 @@ a:hover {
   border-color: #FCD34D !important;
   color: #78350F;
 }
+
+/* ===== Задание 6: калькулятор стоимости услуги ===== */
+#service-calc-form legend {
+  font-size: 1rem;
+}
+
+#service-calc-result {
+  border: 1px solid #D97706;
+  background-color: #FEF3C7;
+  color: #78350F;
+}
+
+/* ===== Задание 7: галерея-слайдер (Slick) ===== */
+.gallery-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gallery-arrow {
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #D97706;
+  background-color: #FDE68A;
+  color: #78350F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.gallery-arrow:hover {
+  background-color: #D97706;
+  color: #FFFFFF;
+  border-color: #B45309;
+}
+
+.gallery-viewport {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.gallery-slider .slick-slide {
+  margin: 0 8px;
+}
+
+.gallery-slider .slick-list {
+  margin: 0 -8px;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #FCD34D;
+  display: block;
+}
+
+.gallery-pager {
+  color: #78350F;
+}
+
+/* ===== Задание 8: попап с формой обратной связи ===== */
+.feedback-no-scroll {
+  overflow: hidden;
+}
+
+.feedback-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  background-color: rgba(120, 53, 15, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.feedback-modal {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  max-height: calc(100vh - 16px);
+  max-height: calc(100dvh - 16px);
+  overflow-y: auto;
+  background-color: #FFFBEB;
+  border: 1px solid #FCD34D;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 10px 40px rgba(120, 53, 15, 0.35);
+}
+
+.feedback-close {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: #78350F;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.feedback-close:hover {
+  color: #D97706;
+}
+
+.feedback-status:empty {
+  display: none;
+}
+
+.feedback-status-info {
+  color: #78350F;
+}
+
+.feedback-status-success {
+  color: #2F855A;
+}
+
+.feedback-status-error {
+  color: #C53030;
+}
+
+/* Адаптив: смартфоны — галерея компактнее, попап помещается в экран без прокрутки */
+@media (max-width: 576px) {
+  .gallery-img {
+    height: 200px;
+  }
+
+  .gallery-arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .feedback-modal {
+    padding: 12px 14px;
+  }
+
+  .feedback-modal .mb-3 {
+    margin-bottom: 0.45rem !important;
+  }
+
+  .feedback-modal .form-label {
+    margin-bottom: 0.15rem;
+    font-size: 0.9rem;
+  }
+
+  .feedback-modal .form-control {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .feedback-modal textarea.form-control {
+    min-height: 54px;
+  }
+
+  .feedback-modal h2 {
+    font-size: 1.05rem;
+  }
+
+  .feedback-modal .btn {
+    padding: 0.45rem;
+  }
+}
